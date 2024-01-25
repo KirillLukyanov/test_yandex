@@ -1,7 +1,5 @@
-export const App = () => {
-    return (
-        <div>
-            lorem
-        </div>
-    );
-};
+export const App = () => (
+  <div>
+    lorem
+  </div>
+);
