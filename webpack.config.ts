@@ -16,50 +16,58 @@ type EnvType = {
 
 export default ({ mode, port }: EnvType) => {
   const isDev = mode === ENV_MODES.DEVELOPMENT;
+
+  const plugins = [
+    new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') }),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
+    }),
+  ];
+
+  const module = {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                localIdentName: isDev
+                  ? '[path][local]__[hash:base64:5]'
+                  : '[hash:base64:8]',
+              },
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   const config: webpack.Configuration & DevServerConfiguration = {
     mode: mode ?? ENV_MODES.DEVELOPMENT,
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          use: 'ts-loader',
-          exclude: /node_modules/,
-        },
-        {
-          test: /\.css$/i,
-          use: [
-            MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: {
-                modules: {
-                  auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-                  localIdentName: isDev
-                    ? '[path][local]__[hash:base64:5]'
-                    : '[hash:base64:8]',
-                },
-              },
-            },
-          ],
-        },
-      ],
-    },
+    module,
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
+      preferAbsolute: true,
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      alias: {},
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].[contenthash].js',
       clean: true,
     },
-    plugins: [
-      new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') }),
-      new MiniCssExtractPlugin({
-        filename: '[name].[contenthash:8].css',
-        chunkFilename: '[name].[contenthash:8].css',
-      }),
-    ],
+    plugins,
     optimization: {
       minimizer: [
         new CssMinimizerPlugin(),
@@ -68,6 +76,7 @@ export default ({ mode, port }: EnvType) => {
     devServer: {
       port: port ?? 3000,
       open: true,
+      historyApiFallback: true,
     },
     devtool: isDev && 'inline-source-map',
   };

@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { App } from './components';
+import { RouterProvider } from 'react-router-dom';
+import { router } from 'router';
 
 const root = document.getElementById('root');
 
@@ -9,13 +9,6 @@ if (!root) {
 }
 
 const container = createRoot(root);
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-  },
-]);
 
 container.render(
   <RouterProvider router={router} />,
