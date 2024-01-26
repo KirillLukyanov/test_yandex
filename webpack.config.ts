@@ -6,7 +6,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
-const enum ENV_MODES {
+export const enum ENV_MODES {
     DEVELOPMENT = 'development',
     PRODUCTION = 'production'
 }
