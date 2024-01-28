@@ -1,7 +1,7 @@
 import { ReactElement, Suspense } from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
-import { App } from 'components';
 import { PostsAndAlbumsPage, CounterPage, UsersPage } from 'pages';
+import { App } from 'app';
 
 export const enum ROUTER_PATHS {
     COUNTER = '/',

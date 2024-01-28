@@ -2,7 +2,7 @@ import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchUsers } from 'services';
 import { useAppDispatch } from 'store';
-import { STATUS_STORE } from 'store/StatusStore';
+import { STATUS_STORE } from 'store/types/StatusStore';
 import { getUsersError, getUsersList, getUsersStatus } from './model/selectors';
 
 export const Users = memo(() => {

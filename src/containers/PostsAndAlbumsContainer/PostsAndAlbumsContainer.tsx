@@ -1,7 +1,8 @@
 import { memo } from 'react';
-import { Albums, Button, Posts } from 'components';
+import { Albums, Posts } from 'components';
 import { fetchAlbums, fetchPosts } from 'services';
 import { useAppDispatch } from 'store';
+import { Button } from 'ui';
 import s from './PostsAndAlbumsContainer.module.css';
 
 export const PostsAndAlbumsContainer = memo(() => {

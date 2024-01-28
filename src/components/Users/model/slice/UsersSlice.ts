@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { STATUS_STORE } from 'store/StatusStore';
+import { STATUS_STORE } from 'store/types/StatusStore';
 import { fetchUsers } from 'services';
 import { UsersSchema } from 'components/Users';
 

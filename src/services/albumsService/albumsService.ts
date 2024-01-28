@@ -1,7 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { createApiClient } from 'services';
-
-const apiClient = createApiClient();
+import { apiClient } from 'services';
 
 export const fetchAlbums = createAsyncThunk(
   'fetchAlbums',
@@ -10,7 +8,7 @@ export const fetchAlbums = createAsyncThunk(
       const response = await apiClient.get('/albums');
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue('getAlbums error');
+      return thunkAPI.rejectWithValue('fetchAlbums error');
     }
   },
 );

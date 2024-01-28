@@ -1,4 +1,4 @@
-import { STATUS_STORE } from 'store/StatusStore';
+import { STATUS_STORE } from 'store/types/StatusStore';
 import { UserDTO } from './UserDTO';
 
 export type UsersSchema = {

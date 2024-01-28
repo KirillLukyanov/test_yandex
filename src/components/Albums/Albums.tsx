@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { STATUS_STORE } from 'store/StatusStore';
+import { STATUS_STORE } from 'store/types/StatusStore';
 import { getAlbumsError, getAlbumsList, getAlbumsStatus } from './model/selectors';
 import s from './Albums.module.css';
 

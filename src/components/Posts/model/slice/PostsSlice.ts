@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { STATUS_STORE } from 'store/StatusStore';
+import { STATUS_STORE } from 'store/types/StatusStore';
 import { fetchPosts } from 'services';
 import { PostsSchema } from 'components/Posts';
 

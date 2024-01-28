@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { createApiClient } from 'services';
+import { apiClient } from 'services';
 import { PostDTO } from 'components/Posts';
-
-const apiClient = createApiClient();
 
 export const fetchPosts = createAsyncThunk<PostDTO[]>(
   'fetchPosts',
@@ -11,7 +9,7 @@ export const fetchPosts = createAsyncThunk<PostDTO[]>(
       const response = await apiClient.get('/posts');
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue('getPosts error');
+      return thunkAPI.rejectWithValue('fetchPosts error');
     }
   },
 );

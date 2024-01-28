@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { STATUS_STORE } from 'store/StatusStore';
+import { STATUS_STORE } from 'store/types/StatusStore';
 import { getPostsError, getPostsList, getPostsStatus } from './model/selectors';
 import s from './Posts.module.css';
 
