@@ -12,6 +12,5 @@ export const rootReducer = combineReducers({
 });
 export const store = configureStore({
   reducer: rootReducer,
-  // TODO
-  devTools: true,
+  devTools: __IS_DEV__,
 });

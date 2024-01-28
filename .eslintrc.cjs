@@ -14,6 +14,9 @@ module.exports = {
     'react-refresh',
     'import'
   ],
+  globals: {
+    __IS_DEV__: true,
+  },
   rules: {
     'react-refresh/only-export-components': [
       'warn',

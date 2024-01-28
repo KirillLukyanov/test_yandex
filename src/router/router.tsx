@@ -4,8 +4,7 @@ import { App } from 'components';
 import { PostsAndAlbumsPage, CounterPage, UsersPage } from 'pages';
 
 export const enum ROUTER_PATHS {
-    MAIN = '/',
-    COUNTER = '/counter',
+    COUNTER = '/',
     USERS = '/users',
     POSTS_AND_ALBUMS = '/postsAndAlbums',
 }
@@ -16,10 +15,6 @@ type RouterPathsListItem = {
 }
 
 export const routerPathsList: RouterPathsListItem[] = [
-  {
-    path: ROUTER_PATHS.MAIN,
-    name: 'Главная',
-  },
   {
     path: ROUTER_PATHS.COUNTER,
     name: 'Счетчик',
@@ -35,14 +30,13 @@ export const routerPathsList: RouterPathsListItem[] = [
 ];
 
 type RouteItem = {
-    path: ROUTER_PATHS,
+    path?: ROUTER_PATHS,
     element: ReactElement,
     children?: RouteItem[],
 } & RouteObject
 
 const routerProps: RouteItem[] = [
   {
-    path: ROUTER_PATHS.MAIN,
     element: <App />,
     children: [
       {

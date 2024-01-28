@@ -25,6 +25,9 @@ export default ({ mode, port }: EnvType) => {
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     new ForkTsCheckerWebpackPlugin(),
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+    }),
   ];
 
   const module = {
