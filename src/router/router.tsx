@@ -1,12 +1,12 @@
 import { ReactElement, Suspense } from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import { App } from 'components';
-import { ButtonPage, CounterPage, EffectPage } from 'pages';
+import { ButtonPage, CounterPage, UsersPage } from 'pages';
 
 export const enum ROUTER_PATHS {
     MAIN = '/',
     COUNTER = '/counter',
-    EFFECT = '/effect',
+    USERS = '/users',
     BUTTON = '/button',
 }
 
@@ -25,8 +25,8 @@ export const routerPathsList: RouterPathsListItem[] = [
     name: 'Counter',
   },
   {
-    path: ROUTER_PATHS.EFFECT,
-    name: 'Effect',
+    path: ROUTER_PATHS.USERS,
+    name: 'Users',
   },
   {
     path: ROUTER_PATHS.BUTTON,
@@ -50,8 +50,8 @@ const routerProps: RouteItem[] = [
         element: <Suspense fallback="Загрузка..."><CounterPage /></Suspense>,
       },
       {
-        path: ROUTER_PATHS.EFFECT,
-        element: <Suspense fallback="Загрузка..."><EffectPage /></Suspense>,
+        path: ROUTER_PATHS.USERS,
+        element: <Suspense fallback="Загрузка..."><UsersPage /></Suspense>,
       },
       {
         path: ROUTER_PATHS.BUTTON,

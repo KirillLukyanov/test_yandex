@@ -1,3 +1,3 @@
 export { CounterPage } from './CounterPage';
-export { EffectPage } from './EffectPage';
+export { UsersPage } from './UsersPage';
 export { ButtonPage } from './ButtonPage';
