@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchUsers } from 'services';
 import { useAppDispatch } from 'store';
 import { STATUS_STORE } from 'store/StatusStore';
 import { getUsersError, getUsersList, getUsersStatus } from './model/selectors';
 
-export const Users = () => {
+export const Users = memo(() => {
   const dispatch = useAppDispatch();
   const users = useSelector(getUsersList);
   const status = useSelector(getUsersStatus);
@@ -26,4 +26,4 @@ export const Users = () => {
       ))}
     </>
   );
-};
+});

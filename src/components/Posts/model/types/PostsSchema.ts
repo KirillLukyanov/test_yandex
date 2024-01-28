@@ -1,8 +1,8 @@
 import { STATUS_STORE } from 'store/StatusStore';
-import { UserDTO } from './UserDTO';
+import { PostDTO } from './PostDTO';
 
-export type UsersSchema = {
-    users: UserDTO[],
+export type PostsSchema = {
+    posts: PostDTO[],
     status: STATUS_STORE,
     error?: string
 }

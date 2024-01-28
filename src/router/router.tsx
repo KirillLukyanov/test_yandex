@@ -1,13 +1,13 @@
 import { ReactElement, Suspense } from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import { App } from 'components';
-import { ButtonPage, CounterPage, UsersPage } from 'pages';
+import { PostsAndAlbumsPage, CounterPage, UsersPage } from 'pages';
 
 export const enum ROUTER_PATHS {
     MAIN = '/',
     COUNTER = '/counter',
     USERS = '/users',
-    BUTTON = '/button',
+    POSTS_AND_ALBUMS = '/postsAndAlbums',
 }
 
 type RouterPathsListItem = {
@@ -18,19 +18,19 @@ type RouterPathsListItem = {
 export const routerPathsList: RouterPathsListItem[] = [
   {
     path: ROUTER_PATHS.MAIN,
-    name: 'Main',
+    name: 'Главная',
   },
   {
     path: ROUTER_PATHS.COUNTER,
-    name: 'Counter',
+    name: 'Счетчик',
   },
   {
     path: ROUTER_PATHS.USERS,
-    name: 'Users',
+    name: 'Пользователи',
   },
   {
-    path: ROUTER_PATHS.BUTTON,
-    name: 'Button',
+    path: ROUTER_PATHS.POSTS_AND_ALBUMS,
+    name: 'Посты и альбомы',
   },
 ];
 
@@ -54,8 +54,8 @@ const routerProps: RouteItem[] = [
         element: <Suspense fallback="Загрузка..."><UsersPage /></Suspense>,
       },
       {
-        path: ROUTER_PATHS.BUTTON,
-        element: <Suspense fallback="Загрузка..."><ButtonPage /></Suspense>,
+        path: ROUTER_PATHS.POSTS_AND_ALBUMS,
+        element: <Suspense fallback="Загрузка..."><PostsAndAlbumsPage /></Suspense>,
       },
     ],
   },

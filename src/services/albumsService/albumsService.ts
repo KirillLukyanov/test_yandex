@@ -3,8 +3,8 @@ import { createApiClient } from 'services';
 
 const apiClient = createApiClient();
 
-export const getAlbums = createAsyncThunk(
-  'getAlbums',
+export const fetchAlbums = createAsyncThunk(
+  'fetchAlbums',
   async (_, thunkAPI) => {
     try {
       const response = await apiClient.get('/albums');

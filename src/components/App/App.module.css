@@ -4,5 +4,6 @@
 
 .app_content {
     padding: 20px;
-    min-height: calc(100vh - var(--appbar_height));
+    height: calc(100vh - var(--appbar_height));
+    overflow-y: scroll;
 }

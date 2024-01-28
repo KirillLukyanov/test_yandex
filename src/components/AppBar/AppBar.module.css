@@ -5,6 +5,7 @@
     height: var(--appbar_height);
     justify-content: center;
     align-items: center;
+    box-shadow: var(--shadow);
 }
 
 a, a:visited, a:active {

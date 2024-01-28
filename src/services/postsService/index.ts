@@ -1,1 +1,1 @@
-export { getPosts } from './postsService';
+export { fetchPosts } from './postsService';

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UsersSchema } from 'components/Users';
 import { STATUS_STORE } from 'store/StatusStore';
 import { fetchUsers } from 'services';
+import { UsersSchema } from 'components/Users';
 
 const initialState: UsersSchema = {
   status: STATUS_STORE.IDLE,

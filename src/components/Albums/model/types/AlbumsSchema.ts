@@ -1,8 +1,8 @@
 import { STATUS_STORE } from 'store/StatusStore';
-import { UserDTO } from './UserDTO';
+import { AlbumDTO } from './AlbumDTO';
 
-export type UsersSchema = {
-    users: UserDTO[],
+export type AlbumsSchema = {
+    albums: AlbumDTO[],
     status: STATUS_STORE,
     error?: string
 }

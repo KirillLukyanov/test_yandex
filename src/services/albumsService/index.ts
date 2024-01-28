@@ -1,1 +1,1 @@
-export { getAlbums } from './albumsService';
+export { fetchAlbums } from './albumsService';
