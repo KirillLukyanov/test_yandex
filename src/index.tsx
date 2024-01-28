@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { RouterProvider, StoreProvider } from 'providers';
+import 'styles/index.css';
 
 const root = document.getElementById('root');
 

@@ -1,3 +1,8 @@
 .app {
-    background: red;
+    background-color: #F2F6F8;
+}
+
+.app_content {
+    padding: 0 20px;
+    min-height: calc(100vh - var(--appbar_height));
 }

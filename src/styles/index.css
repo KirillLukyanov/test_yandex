@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Geneva, Helvetica, sans-serif;
 }
 
-input,
-button,
-textarea,
-select {
-    margin: 0;
-    font: inherit;
+#root {
+    /*colors*/
+    --blue: #008AF5;
+    --background: #F2F6F8;
+
+    /*sizes*/
+    --appbar_height: 60px;
 }

@@ -1,8 +1,14 @@
 .appBar {
     display: flex;
     gap: 20px;
-    background: blanchedalmond;
-    height: 50px;
+    background: var(--blue);
+    height: var(--appbar_height);
     justify-content: center;
     align-items: center;
+}
+
+a, a:visited, a:active {
+    color: var(--background);
+    font-size: 18px;
+    text-decoration: none;
 }

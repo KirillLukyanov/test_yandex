@@ -14,7 +14,7 @@ export const Counter = () => {
   };
 
   return (
-    <div>
+    <>
       <h1 data-testid="value-title">{counterValue}</h1>
       <button
         type="button"
@@ -28,6 +28,6 @@ export const Counter = () => {
       >
         decrement
       </button>
-    </div>
+    </>
   );
 };

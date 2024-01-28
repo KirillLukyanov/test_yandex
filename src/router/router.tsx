@@ -17,6 +17,10 @@ type RouterPathsListItem = {
 
 export const routerPathsList: RouterPathsListItem[] = [
   {
+    path: ROUTER_PATHS.MAIN,
+    name: 'Main',
+  },
+  {
     path: ROUTER_PATHS.COUNTER,
     name: 'Counter',
   },
